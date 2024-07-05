@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExamsApp</string>
+    <string name="go_to_back">Ко всем предметам</string>
 </resources>
