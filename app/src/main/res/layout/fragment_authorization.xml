@@ -4,17 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginVertical="64dp"
+    android:layout_marginHorizontal="32dp"
     tools:context=".AuthorizationFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAvatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="100dp"
+        android:backgroundTint="@color/gray">
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_person_gray_24"
+            tools:ignore="ContentDescription" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="authorization"
-        app:layout_constraintBaseline_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
+        android:text="@string/sign_up"
+        android:textAllCaps="true"
+        android:textSize="40sp"
+        android:textColor="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilName"
+        android:hint="@string/name"
+        style="@style/EditTextLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvAvatar">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            style="@style/EditTextLayoutEditText"
+            tools:ignore="ContentDescription"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSurname"
+        style="@style/EditTextLayout"
+        android:hint="@string/surname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilName">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSurname"
+            style="@style/EditTextLayoutEditText"
+            tools:ignore="ContentDescription"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPatronymic"
+        style="@style/EditTextLayout"
+        android:hint="@string/patronymic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilSurname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPatronymic"
+            style="@style/EditTextLayoutEditText"
+            tools:ignore="ContentDescription"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilGroup"
+        style="@style/EditTextLayout"
+        android:hint="@string/group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPatronymic">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etGroup"
+            style="@style/EditTextLayoutEditText"
+            android:inputType="phone"
+            tools:ignore="ContentDescription"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius="100dp"
+        android:backgroundTint="@color/gray"
+        android:text="@string/send"
+
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilGroup"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
