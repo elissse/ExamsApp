@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ExamsApp</string>
+    <string name="sign_up">Sign up</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="patronymic">Patronymic</string>
+    <string name="group">Group</string>
+    <string name="send">Send</string>
+    <string name="account">Account</string>
+    <string name="change_profile">Change Profile</string>
+    <string name="support">Support</string>
+    <string name="settings">settings</string>
 </resources>
