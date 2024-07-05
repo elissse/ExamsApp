@@ -1,31 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.wajahatkarim3.easyflipview.EasyFlipView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flipView"
     android:layout_width="match_parent"
-    android:theme="@style/Theme.MaterialComponents.Light"
-    android:layout_height="500dp"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginTop="8dp"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="8dp">
+    android:layout_height="match_parent"
+    app:flipDuration="400"
+    app:flipEnabled="true"
+    app:flipType="horizontal"
+    app:flipOnTouch="false">
+    <!--Back-->
+    <include
+        android:id="@+id/backSide"
+        layout="@layout/back_side" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?selectableItemBackground"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp">
+    <!--Front-->
+    <include
+        android:id="@+id/frontSide"
+        layout="@layout/front_side" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <TextView
-        android:id="@+id/tvQuestion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/courier_prime_bold"
-        android:textColor="#332E30"
-        android:textSize="20sp"
-        android:layout_margin="16dp"
-        tools:text="what is money?" />
-</com.google.android.material.card.MaterialCardView>
+</com.wajahatkarim3.easyflipview.EasyFlipView>

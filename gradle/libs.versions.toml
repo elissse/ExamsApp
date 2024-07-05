@@ -2,6 +2,7 @@
 agp = "8.5.0"
 constraintlayout = "2.2.0-alpha13"
 constraintlayoutCompose = "1.1.0-alpha13"
+easyflipview = "3.0.3"
 glide = "4.16.0"
 googleMaterial = "1.2.0"
 kotlin = "1.9.0"
@@ -21,6 +22,7 @@ androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constr
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
+easyflipview = { module = "com.wajahatkarim:EasyFlipView", version.ref = "easyflipview" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

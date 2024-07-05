@@ -2,7 +2,7 @@ package com.app
 
 object FlashCardRepository {
 
-    val flashCards: List<FlashCard> = listOf(
+    val flashCards: MutableList<FlashCard> = mutableListOf(
         FlashCard(
             id = 1,
             subjectId = 1,
@@ -29,7 +29,4 @@ object FlashCardRepository {
         )
     )
 
-    val flashCardsNew: List<FlashCard> = listOf(
-
-    )
 }

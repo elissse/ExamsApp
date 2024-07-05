@@ -3,12 +3,16 @@ package com.app
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.core.animateDpAsState
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.app.databinding.FragmentMainActivityBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
+//fun main() {
+//    FlashCardRepository.flashCards.add(FlashCard(id = 5, subjectId = 1, question = "why5", answer="ansd5"
+//    ))
+//}
 class MainActivity : AppCompatActivity() {
 
     private var binding: FragmentMainActivityBinding? = null

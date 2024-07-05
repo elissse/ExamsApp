@@ -31,4 +31,8 @@ class FlashCardAdapter(
     }
 
     override fun getItemCount(): Int = list.size
+    fun updateDataset(newList : List<FlashCard>) {
+        list = newList
+        notifyDataSetChanged()
+    }
 }
