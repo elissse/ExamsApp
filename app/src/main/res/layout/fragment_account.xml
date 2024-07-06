@@ -7,10 +7,10 @@
     tools:context=".AccountFragment">
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvGroupNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="account"
+        android:text="взять у Ани!!!!"
         app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

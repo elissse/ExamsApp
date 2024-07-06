@@ -13,10 +13,13 @@ import com.google.android.material.snackbar.Snackbar
 
 class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
     private var binding: FragmentScheduleBinding? = null
-
+    private var adapter: DayAdapter? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentScheduleBinding.bind(view)
+        DayRepository.changeToFollowing("11-305")
+
+        initAdapter()
     }
 
     override fun onDestroyView() {
@@ -24,37 +27,18 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
         binding = null
     }
 
-//    private var binding: FragmentScheduleBinding? = null
-//    private var adapter: ScheduleDayAdapter? = null
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        binding = FragmentScheduleBinding.bind(view)
-//
-//        initAdapter()
-//    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        binding = null
-//    }
-//
-//    private fun initAdapter() {
-//        binding?.run {
-//            adapter = ScheduleDayAdapter(
-//                list = ScheduleDayRepository.vinyls,
-//                glide = Glide.with(this@ScheduleFragment),
-//                onClick = {
-//                    Toast.makeText(activity,"yeee",Toast.LENGTH_SHORT).show()
-//                }
-//            )
-//
-//            rvScheduleDay.adapter = adapter
-//
-//            rvScheduleDay.layoutManager = LinearLayoutManager(requireContext())
-//
-//            tvScheduleTitle.setOnClickListener {
-//                adapter?.updateDataset(ScheduleDayRepository.vinyls)
-//            }
-//        }
-//    }
+    private fun initAdapter() {
+        binding?.run {
+            adapter = DayAdapter(
+                list = DayRepository.days,
+                onClick = {
+                    findNavController().navigate(
+                        R.id.action_scheduleFragment_to_subjectsFragment
+                    )
+                }
+            )
+            rvScheduleDay.adapter = adapter
+            rvScheduleDay.layoutManager = LinearLayoutManager(requireContext())
+        }
+    }
 }
