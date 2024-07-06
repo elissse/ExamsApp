@@ -23,8 +23,6 @@ class SubjectHolder(
         binding.run {
             tvName.text = subject.name
 
-            //tvNumber.text = person.number
-
             glide
                 //.load(person.url)
                 //.error(R.drawable.img_not_found)

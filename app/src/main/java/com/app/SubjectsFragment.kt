@@ -7,7 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.app.databinding.FragmentSubjectsBinding
-//import ru.itis.summerpractice.utils.showSnackbar
+
 
 class SubjectsFragment : Fragment(R.layout.fragment_subjects) {
 
@@ -36,14 +36,13 @@ class SubjectsFragment : Fragment(R.layout.fragment_subjects) {
                         R.id.action_subjectsFragment_to_subjectFragment,
                         SubjectFragment.createBundle(subject.id)
                     )
-                    //binding?.root?.showSnackbar(subject.name)
+
                 }
 
             )
 
             binding?.rvSubjects?.adapter = adapter
 
-//          по-умолчанию линерлайоутманагер строит вертикальный список
             rvSubjects.layoutManager = LinearLayoutManager(requireContext())
         }
     }
