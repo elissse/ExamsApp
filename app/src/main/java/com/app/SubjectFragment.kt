@@ -38,7 +38,7 @@ class SubjectFragment : Fragment(R.layout.fragment_subject) {
         binding?.flashCards?.setOnClickListener {
             findNavController().navigate(
                 R.id.action_subjectFragment_to_flashCardFragment,
-                TextbookFragment.createBundle(subjectId!!)
+                FlashCardFragment.createBundle(subjectId!!)
             )
         }
 

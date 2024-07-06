@@ -20,9 +20,9 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFlashCardsBinding.bind(view)
-        // val subjectId = arguments?.getInt(ARG_ID) ?: "ERROR"
-        val subjectId = 1
-        val flashCards = FlashCardRepository.flashCards.filter { it.subjectId == subjectId }
+         val subjectId = arguments?.getInt(SUBJECT_ID) ?: -1
+        //val subjectId = 1
+        //val flashCards = FlashCardRepository.flashCards.filter { it.subjectId == subjectId }
         initAdapter(subjectId)
     }
 
@@ -30,16 +30,23 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
         super.onDestroyView()
         binding = null
     }
-
     companion object {
-        private const val ARG_ID = "ARG_ID"
-        fun bundle(id: Int): Bundle = Bundle().apply {
-            putInt(ARG_ID, id)
+
+        private const val SUBJECT_ID = "SUBJECT_ID"
+        fun createBundle(id: Int): Bundle {
+            val bundle = Bundle()
+            bundle.putInt(SUBJECT_ID, id)
+            return bundle
         }
     }
 
     private fun initAdapter(subjectId: Int) {
         binding?.run {
+            Snackbar.make(
+                root,
+                "subject: $subjectId",
+                Snackbar.LENGTH_SHORT
+            ).show()
             adapter = FlashCardAdapter(
                 list = FlashCardRepository.flashCards.filter { it.subjectId == subjectId },
                 glide = Glide.with(this@FlashCardsFragment),
