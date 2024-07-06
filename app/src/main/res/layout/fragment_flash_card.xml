@@ -4,46 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="24dp"
     tools:context=".SubjectsFragment">
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="4dp"
         android:fontFamily="@font/courier_prime_bold"
-        android:textColor="#332E30"
-        android:textSize="20sp"
+        android:gravity="center"
+        android:text="flash cards?"
+        android:textColor="#F8CEDC"
+        android:textSize="32sp"
         app:layout_constraintBaseline_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="29dp"
+        app:layout_constraintBottom_toTopOf="@id/mcvFlashCards"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="flash cards?" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcvFlashCards"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:theme="@style/Theme.MaterialComponents.Light"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
         app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:outlineAmbientShadowColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/mcvButton"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:layout_constraintVertical_bias="0.18">
 
         <TextView
             android:id="@+id/tvFlashCards"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:layout_gravity="center"
             android:fontFamily="@font/courier_prime_bold"
             android:textColor="#332E30"
             android:textSize="20sp"
+            android:text="go study?"
             app:layout_constraintBaseline_toTopOf="parent"
             tools:text="go study?" />
 
@@ -55,22 +63,48 @@
             android:paddingHorizontal="16dp"
             android:paddingVertical="12dp"
             app:layout_constraintBaseline_toTopOf="parent">
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text=" add new flash card "
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBaseline_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcvFlashCards"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mcvFlashCards"
-        android:background="@color/purple_200"
-        app:circularflow_radiusInDP="8"
-        android:shadowColor="@color/cardview_dark_background"/>
+        app:layout_constraintVertical_bias="0.18">
+        <TextView
+            android:id="@+id/tvButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/courier_prime_bold"
+            android:textColor="#332E30"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:text="add new flash card?"
+            app:layout_constraintBaseline_toTopOf="parent"
+            tools:text="add new flash card?" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="?selectableItemBackground"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintBaseline_toTopOf="parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,23 +42,7 @@ class FlashCardHolder(
             }
         }
     }
-    inner class ViewHolder(private val view: View) :
-        RecyclerView.ViewHolder(view) {
-        private val backSide: ConstraintLayout = view.findViewById(R.id.backSide)
-        private val frontSide: ConstraintLayout = view.findViewById(R.id.frontSide)
-        private val flipView: EasyFlipView = view.findViewById(R.id.flipView)
 
-        init {
-            backSide.setOnClickListener {
-                flipView.flipDuration = 1000
-                flipView.flipTheView()
-            }
-            frontSide.setOnClickListener {
-                flipView.flipDuration = 1000
-                flipView.flipTheView()
-            }
-        }
-    }
 
 //    private fun FlashCard.getTitleColor(): Int = if (url.length > 120) {
 //        R.color.pink_700

@@ -28,7 +28,7 @@ class FlashCardFragment : Fragment(R.layout.fragment_flash_card) {
                     )
                 )
             }
-            btnAdd.setOnClickListener {
+            mcvButton.setOnClickListener {
 
                 findNavController().navigate(
                     R.id.action_flashCardFragment_to_addFlashCardFragment,
