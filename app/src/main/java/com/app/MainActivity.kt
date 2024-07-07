@@ -27,20 +27,6 @@ class MainActivity : AppCompatActivity() {
         controller?.let { navController ->
             binding?.bottomNavigation?.setupWithNavController(navController)
         }
-        controller?.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.authorizationFragment -> {
-                    findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
-                }
-            }
-//        controller?.addOnDestinationChangedListener { _, destination, _ ->
-//            if (destination.id == R.id.authorizationFragment) {
-//                findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
-//            } else {
-//                findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.VISIBLE
-//            }
-//
-        }
     }
 
     override fun onBackPressed() {
