@@ -5,5 +5,6 @@ data class Textbook (
     val idTextbook: Int,
     val titleAndAuthor: String,
     val photoUrl: String,
-    val url: String
+    val url: String,
+    var like: Boolean
 )
