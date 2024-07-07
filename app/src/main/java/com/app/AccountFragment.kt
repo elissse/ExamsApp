@@ -1,8 +1,11 @@
 package com.app
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.app.databinding.FragmentAccountBinding
 
 class AccountFragment : Fragment(R.layout.fragment_account) {
@@ -11,6 +14,21 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountBinding.bind(view)
+        init()
+    }
+
+    private fun init() {
+        binding?.run {
+            val sharedPref = context?.getSharedPreferences(AuthorizationFragment.USER_INFO, Context.MODE_PRIVATE)
+            tvName.text = sharedPref?.getString(AuthorizationFragment.NAME, "")
+            tvSurname.text = sharedPref?.getString(AuthorizationFragment.SURNAME, "")
+            tvPatronymic.text = sharedPref?.getString(AuthorizationFragment.PATRONYMIC, "")
+            tvGroup.text = sharedPref?.getString(AuthorizationFragment.GROUP, "")
+
+            ibSettings.setOnClickListener() {
+                findNavController().navigate(R.id.action_accountFragment_to_settingsFragment)
+            }
+        }
     }
 
     override fun onDestroyView() {
