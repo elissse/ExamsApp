@@ -1,14 +1,11 @@
 package com.app
 
-import android.content.Context
 import android.view.View
-import androidx.compose.material3.Button
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.app.databinding.ItemTextbookBinding
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
-import java.util.stream.DoubleStream.Builder
 
 
 class TextbookHolder(
@@ -26,9 +23,15 @@ class TextbookHolder(
             tvTitleAndAuthor.text = textbook.titleAndAuthor
             tvUrl.text = textbook.url
 
+            if (textbook.like) {
+                btnLiked.visibility = View.VISIBLE
+            }
+            else {
+                btnLiked.visibility = View.INVISIBLE
+            }
+
             btnLike.setOnClickListener(View.OnClickListener {view ->
                 btnLiked.visibility = View.VISIBLE
-                LikeRepository.textbooks.add(textbook)
                 textbook.like = !(textbook.like)
             })
 
@@ -46,6 +49,5 @@ class TextbookHolder(
                 .apply(requestOptions)
                 .into(ivImage)
         }
-
     }
 }
