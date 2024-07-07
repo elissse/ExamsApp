@@ -17,7 +17,7 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentScheduleBinding.bind(view)
-        DayRepository.changeToFollowing("11-305")
+        DayRepository.changeToFollowing(GroupRepository.curGroup)
 
         initAdapter()
     }

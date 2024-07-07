@@ -54,7 +54,8 @@ object DayRepository {
         Day(31, dayOfWeek[0], ""),
     )
 
-    fun changeToFollowing(group: String) {
+    fun changeToFollowing(group: String?) {
+        clearAll()
         val num = groupToId(group)
         when (num) {
             301 -> {
@@ -102,7 +103,16 @@ object DayRepository {
         }
     }
 
-    private fun groupToId(name: String) : Int {
-        return Integer.parseInt(name.substring(name.indexOf('-')+1))
+    private fun groupToId(name: String?) : Int {
+        if (name != null) {
+            return Integer.parseInt(name.substring(name.indexOf('-')+1))
+        }
+        return 301
+    }
+
+    private fun clearAll() {
+        for (i in 0..30) {
+            days[i].subject = ""
+        }
     }
 }
