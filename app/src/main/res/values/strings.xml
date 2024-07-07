@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ExamsApp</string>
     <string name="go_to_back">Ко всем предметам</string>
+    <string name="go_back">go back?</string>
+    <string name="add_new_flash_card">add new flash card?</string>
+    <string name="go_study">go study?</string>
+    <string name="flash_cards">flash cards?</string>
 </resources>

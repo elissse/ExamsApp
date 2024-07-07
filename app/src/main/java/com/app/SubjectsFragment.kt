@@ -34,7 +34,9 @@ class SubjectsFragment : Fragment(R.layout.fragment_subjects) {
                 onClick = { subject ->
                     findNavController().navigate(
                         R.id.action_subjectsFragment_to_subjectFragment,
-                        SubjectFragment.createBundle(subject.id)
+                        args = SubjectFragment.bundle(
+                            id = subject.id
+                        )
                     )
 
                 }

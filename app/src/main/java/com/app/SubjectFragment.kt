@@ -16,13 +16,12 @@ class SubjectFragment : Fragment(R.layout.fragment_subject) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSubjectBinding.bind(view)
-        val subjectId = arguments?.getInt(SUBJECT_ID)
-        if (subjectId != null) {
-            val subject = SubjectRepository.subjects.single {
-                it.id == subjectId
-            }
-            setInfo(subject)
+        val subjectId = arguments?.getInt(ARG_ID) ?: -1
+        val subject = SubjectRepository.subjects.single {
+            it.id == subjectId
         }
+        setInfo(subject)
+
 
         binding?.btnGoToBack?.setOnClickListener {
             findNavController().navigateUp()
@@ -31,18 +30,23 @@ class SubjectFragment : Fragment(R.layout.fragment_subject) {
         binding?.materials?.setOnClickListener {
             findNavController().navigate(
                 R.id.action_subjectFragment_to_textbookFragment,
-                TextbookFragment.createBundle(subjectId!!)
+                args = TextbookFragment.bundle(
+                    id = subjectId
+                )
             )
         }
 
         binding?.flashCards?.setOnClickListener {
             findNavController().navigate(
                 R.id.action_subjectFragment_to_flashCardFragment,
-                FlashCardFragment.createBundle(subjectId!!)
+                args = FlashCardFragment.bundle(
+                    id = subjectId
+                )
             )
         }
 
     }
+
     private val options: RequestOptions = RequestOptions
         .diskCacheStrategyOf(DiskCacheStrategy.ALL)
 
@@ -59,12 +63,18 @@ class SubjectFragment : Fragment(R.layout.fragment_subject) {
     }
 
     companion object {
-        private const val SUBJECT_ID = "SUBJECT_ID"
-        fun createBundle(id: Int): Bundle {
-            val bundle = Bundle()
-            bundle.putInt(SUBJECT_ID, id)
-            return bundle
+        private const val ARG_ID = "ARG_ID"
+        fun bundle(id: Int): Bundle = Bundle().apply {
+            putInt(ARG_ID, id)
         }
     }
+//    companion object {
+//        private const val SUBJECT_ID = "SUBJECT_ID"
+//        fun createBundle(id: Int): Bundle {
+//            val bundle = Bundle()
+//            bundle.putInt(SUBJECT_ID, id)
+//            return bundle
+//        }
+//    }
 
 }

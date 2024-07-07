@@ -20,9 +20,7 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFlashCardsBinding.bind(view)
-         val subjectId = arguments?.getInt(SUBJECT_ID) ?: -1
-        //val subjectId = 1
-        //val flashCards = FlashCardRepository.flashCards.filter { it.subjectId == subjectId }
+         val subjectId = arguments?.getInt(ARG_ID) ?: -1
         initAdapter(subjectId)
     }
 
@@ -31,22 +29,19 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
         binding = null
     }
     companion object {
-
-        private const val SUBJECT_ID = "SUBJECT_ID"
-        fun createBundle(id: Int): Bundle {
-            val bundle = Bundle()
-            bundle.putInt(SUBJECT_ID, id)
-            return bundle
+        private const val ARG_ID = "ARG_ID"
+        fun bundle(id: Int): Bundle = Bundle().apply {
+            putInt(ARG_ID, id)
         }
     }
 
     private fun initAdapter(subjectId: Int) {
         binding?.run {
-            Snackbar.make(
-                root,
-                "subject: $subjectId",
-                Snackbar.LENGTH_SHORT
-            ).show()
+//            Snackbar.make(
+//                root,
+//                "subject: $subjectId",
+//                Snackbar.LENGTH_SHORT
+//            ).show()
             adapter = FlashCardAdapter(
                 list = FlashCardRepository.flashCards.filter { it.subjectId == subjectId },
                 glide = Glide.with(this@FlashCardsFragment),
@@ -59,6 +54,11 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
             // rvFlashCard.layoutManager = LinearLayoutManager(requireContext())
             rvFlashCard.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            btnGoToBack.setOnClickListener{
+                findNavController().navigate(
+                    R.id.action_flashCardsFragment_to_flashCardFragment
+                )
+            }
         }
     }
 

@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_flashCardFragment_to_addFlashCardFragment"
             app:destination="@id/addFlashCardFragment" />
+        <action
+            android:id="@+id/action_flashCardFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
     </fragment>
     <fragment
         android:id="@+id/scheduleFragment"
@@ -80,7 +83,11 @@
         android:id="@+id/flashCardsFragment"
         android:name="com.app.FlashCardsFragment"
         android:label="fragment_flash_cards"
-        tools:layout="@layout/fragment_flash_cards" />
+        tools:layout="@layout/fragment_flash_cards" >
+        <action
+            android:id="@+id/action_flashCardsFragment_to_flashCardFragment"
+            app:destination="@id/flashCardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addFlashCardFragment"
         android:name="com.app.AddFlashCardFragment"

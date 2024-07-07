@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.app.databinding.FragmentMainActivityBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 //fun main() {
 //    FlashCardRepository.flashCards.add(FlashCard(id = 5, subjectId = 1, question = "why5", answer="ansd5"
 //    ))
@@ -31,12 +32,24 @@ class MainActivity : AppCompatActivity() {
         controller?.let { navController ->
             binding?.bottomNavigation?.setupWithNavController(navController)
         }
-//        controller?.addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
+        controller?.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
 //                R.id.authorizationFragment -> {
 //                    findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
 //                }
-//            }
+                R.id.flashCardFragment -> {
+                    findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
+                }
+
+                R.id.flashCardsFragment -> {
+                    findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
+                }
+
+                R.id.addFlashCardFragment -> {
+                    findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
+                }
+            }
+        }
 //        controller?.addOnDestinationChangedListener { _, destination, _ ->
 //            if (destination.id == R.id.authorizationFragment) {
 //                findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.GONE
@@ -44,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 //                findViewById<BottomNavigationView>(R.id.bottomNavigation).visibility = View.VISIBLE
 //            }
 //
-  //      }
+        //      }
     }
 
     override fun onBackPressed() {

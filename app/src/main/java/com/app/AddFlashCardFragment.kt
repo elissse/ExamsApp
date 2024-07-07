@@ -21,7 +21,7 @@ class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
                 var size = FlashCardRepository.flashCards.size
 
                 if (question.isNotEmpty()) {
-                    val subjectId = arguments?.getInt(SUBJECT_ID) ?: -1
+                    val subjectId = arguments?.getInt(ARG_ID) ?: -1
                     FlashCardRepository.flashCards.add(
                         FlashCard(
                             id = ++size,
@@ -32,7 +32,9 @@ class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
                     )
                     findNavController().navigate(
                         R.id.action_addFlashCardFragment_to_flashCardFragment,
-                        FlashCardsFragment.createBundle(subjectId!!)
+                        args = FlashCardsFragment.bundle(
+                            id = subjectId
+                        )
                     )
                 } else
                     Snackbar.make(
@@ -44,20 +46,12 @@ class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
         }
     }
 
-//    companion object {
-//        private const val ARG_ID = "ARG_ID"
-//        fun bundle(id: Int): Bundle = Bundle().apply {
-//            putInt(ARG_ID, id)
-//        }
-//    }
-companion object {
-    private const val SUBJECT_ID = "SUBJECT_ID"
-    fun createBundle(id: Int): Bundle {
-        val bundle = Bundle()
-        bundle.putInt(SUBJECT_ID, id)
-        return bundle
+    companion object {
+        private const val ARG_ID = "ARG_ID"
+        fun bundle(id: Int): Bundle = Bundle().apply {
+            putInt(ARG_ID, id)
+        }
     }
-}
 
     override fun onDestroyView() {
         super.onDestroyView()

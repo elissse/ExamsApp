@@ -17,7 +17,7 @@ class TextbookFragment : Fragment(R.layout.fragment_textbook) {
         super.onViewCreated(view, savedInstanceState)
         textbookRepository = TextbookRepository.getInstance(requireContext())
         binding = FragmentTextbookBinding.bind(view)
-        subjectId = arguments?.getInt(SUBJECT_ID)
+        subjectId = arguments?.getInt(ARG_ID)
         initAdapter()
     }
 
@@ -25,14 +25,10 @@ class TextbookFragment : Fragment(R.layout.fragment_textbook) {
         super.onDestroyView()
         binding = null
     }
-
     companion object {
-
-        private const val SUBJECT_ID = "SUBJECT_ID"
-        fun createBundle(id: Int): Bundle {
-            val bundle = Bundle()
-            bundle.putInt(SUBJECT_ID, id)
-            return bundle
+        private const val ARG_ID = "ARG_ID"
+        fun bundle(id: Int): Bundle = Bundle().apply {
+            putInt(ARG_ID, id)
         }
     }
 
