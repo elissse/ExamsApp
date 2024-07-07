@@ -59,24 +59,15 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
         }
     }
 
-    private fun isValidInfo(tilName: TextInputLayout,
-                            tilSurname: TextInputLayout,
-                            tilPatronymic: TextInputLayout,
-                            tilGroup: TextInputLayout)
-    : Boolean = (tilName.error == null) &&
-            (tilSurname.error == null) &&
-            (tilPatronymic.error == null) &&
-            (tilGroup.error == null)
-
     private fun doOnTextChangedSNP(et: TextInputEditText, til: TextInputLayout, string: String) {
         val regex = Regex("[А-Я][а-я]*-*[А-Я]*[а-я]*")
         et.doOnTextChanged() { text, _, _, _ ->
             val str = text?.toString() ?: ""
-            val title = "${string[0]}${string.substring(1).lowercase()}"
+            val title = string.lowercase()
             val message = when {
-                str.isEmpty() && title.equals(PATRONYMIC) -> null
+                str.isEmpty() && string.equals(PATRONYMIC) -> null
                 str.isBlank() -> "Enter your $title"
-                str[0] != text.toString()[0].uppercaseChar() -> "$title must start with a capital letter"
+                str[0] != text.toString()[0].uppercaseChar() -> "${string[0]}${title.substring(1)} must start with a capital letter"
                 !regex.matches(str) -> "Make sure $title contains only letters and -"
                 else -> null
             }
@@ -95,11 +86,20 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
     }
 
     companion object {
-        private const val USER_INFO = "USER_INFO"
+        const val USER_INFO = "USER_INFO"
         const val NAME = "NAME"
         const val SURNAME = "SURNAME"
         const val PATRONYMIC = "PATRONYMIC"
         const val GROUP = "GROUP"
         const val CHANGED = "CHANGED"
+
+        fun isValidInfo(tilName: TextInputLayout,
+                                tilSurname: TextInputLayout,
+                                tilPatronymic: TextInputLayout,
+                                tilGroup: TextInputLayout)
+                : Boolean = (tilName.error == null) &&
+                (tilSurname.error == null) &&
+                (tilPatronymic.error == null) &&
+                (tilGroup.error == null)
     }
 }
