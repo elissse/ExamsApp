@@ -10,4 +10,6 @@ object GroupRepository {
         "11-305",
         "11-306"
         )
+
+    var curGroup: String? = "11-301"
 }

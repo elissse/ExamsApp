@@ -51,6 +51,7 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
                         editor?.putString(GROUP, group)
                         editor?.putBoolean(CHANGED, true)
                         editor?.apply()
+                        GroupRepository.curGroup = group
                         findNavController().navigate(R.id.action_authorizationFragment_to_scheduleFragment)
                     }
                     else ->  Snackbar.make(root, "Invalid info, please try again", Snackbar.LENGTH_SHORT).show()
