@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.databinding.FragmentAboutBinding
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 
 class AboutFragment: Fragment(R.layout.fragment_about) {
     var binding: FragmentAboutBinding? = null
@@ -18,11 +16,6 @@ class AboutFragment: Fragment(R.layout.fragment_about) {
         binding = FragmentAboutBinding.bind(view)
         init()
     }
-
-    private val requestOptions = RequestOptions
-        .diskCacheStrategyOf(
-            DiskCacheStrategy.ALL
-        )
 
     private fun init() {
         binding?.run {
