@@ -69,6 +69,8 @@ dependencies {
     implementation(libs.ksp)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.easyflipview)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

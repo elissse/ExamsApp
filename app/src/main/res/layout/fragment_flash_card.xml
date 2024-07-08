@@ -1,8 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FlashCardFragment">
+    android:layout_margin="24dp"
+    tools:context=".SubjectsFragment">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/courier_prime_bold"
+        android:gravity="center"
+        android:text="@string/flash_cards"
+        android:textColor="#F8CEDC"
+        android:textSize="32sp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mcvFlashCards"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="flash cards?" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvFlashCards"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="16dp"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/mcvButton"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintVertical_bias="0.18">
+
+        <TextView
+            android:id="@+id/tvFlashCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/courier_prime_bold"
+            android:textColor="#332E30"
+            android:textSize="20sp"
+            android:text="@string/go_study"
+            app:layout_constraintBaseline_toTopOf="parent"
+            tools:text="go study?" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="?selectableItemBackground"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="128dp"
+            app:layout_constraintBaseline_toTopOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvButton"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_go_to_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcvFlashCards"
+        app:layout_constraintVertical_bias="0.18">
+
+        <TextView
+            android:id="@+id/tvButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/courier_prime_bold"
+            android:text="@string/add_new_flash_card"
+            android:textColor="#332E30"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toTopOf="parent"
+            tools:text="add new flash card?" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="?selectableItemBackground"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="32dp"
+            app:layout_constraintBaseline_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+    <Button
+        android:id="@+id/btn_go_to_back"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="@string/go_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcvButton"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp" />
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/mcvGoBack"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:layout_marginHorizontal="16dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:theme="@style/Theme.MaterialComponents.NoActionBar"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:cardCornerRadius="12dp"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:layout_constraintBaseline_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/mcvButton"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.18">-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvButton2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:fontFamily="@font/courier_prime_bold"-->
+<!--            android:textColor="#332E30"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="@string/go_back"-->
+<!--            app:layout_constraintBaseline_toTopOf="parent"-->
+<!--             />-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:background="?selectableItemBackground"-->
+<!--            android:paddingHorizontal="16dp"-->
+<!--            android:paddingVertical="32dp"-->
+<!--            app:layout_constraintBaseline_toTopOf="parent"/>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">ExamsApp</string>
     <string name="sign_up">Sign up</string>
     <string name="name">Name</string>
@@ -11,4 +12,9 @@
     <string name="support">Support</string>
     <string name="settings">settings</string>
     <string name="about_us">About us</string>
+    <string name="go_to_back">Ко всем предметам</string>
+    <string name="go_back">go back?</string>
+    <string name="add_new_flash_card">add a new flash card?</string>
+    <string name="go_study">go study?</string>
+    <string name="flash_cards">flash cards?</string>
 </resources>
