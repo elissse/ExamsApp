@@ -1,5 +1,10 @@
 package com.app
 
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.URLSpan
+import android.text.util.Linkify
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.app.databinding.ItemTextbookBinding
@@ -22,6 +27,13 @@ class TextbookHolder(
         binding.run {
             tvTitleAndAuthor.text = textbook.titleAndAuthor
             tvUrl.text = textbook.url
+
+            val originalText = tvUrl.text.toString()
+            val spannableBuilder = SpannableStringBuilder(originalText)
+            Linkify.addLinks(spannableBuilder, Linkify.WEB_URLS)
+            tvUrl.text = spannableBuilder
+            tvUrl.movementMethod = LinkMovementMethod.getInstance()
+
 
             if (textbook.like) {
                 btnLiked.visibility = View.VISIBLE

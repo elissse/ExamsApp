@@ -1,18 +1,11 @@
 package com.app
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.privacysandbox.tools.core.model.Types
 import com.app.databinding.FragmentAddFlashCardBinding
 import com.google.android.material.snackbar.Snackbar
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.squareup.moshi.Moshi
-import java.lang.reflect.Type
 
 
 class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
