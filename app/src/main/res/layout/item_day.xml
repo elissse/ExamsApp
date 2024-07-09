@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="8dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/background"
     app:cardCornerRadius="12dp"
     app:cardElevation="8dp" android:layout_width="match_parent">
 
@@ -17,13 +17,13 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/baseline_sunny_24" />
+            app:srcCompat="@drawable/baseline_circle_24" />
 
         <TextView
             android:id="@+id/tvDay"
@@ -31,8 +31,8 @@
             android:layout_height="72dp"
             android:gravity="center"
             android:text="12"
-            android:textColor="@color/black"
-            android:textSize="32dp"
+            android:textColor="@color/background"
+            android:textSize="48dp"
             app:layout_constraintBottom_toBottomOf="@id/imageView"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@id/imageView"
@@ -45,16 +45,16 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@color/purple_200"
             android:gravity="center_vertical"
 
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.791"
             app:layout_constraintStart_toEndOf="@+id/tvDay"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="информатика" />
@@ -66,7 +66,7 @@
             android:layout_marginStart="4dp"
             android:gravity="center_vertical"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
