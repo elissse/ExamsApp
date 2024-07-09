@@ -2,13 +2,12 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="8dp"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="12dp"
-    app:cardElevation="8dp">
+    app:cardElevation="8dp" android:layout_width="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,51 +15,65 @@
         android:paddingHorizontal="16dp"
         android:paddingVertical="12dp">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_sunny_24" />
+
         <TextView
             android:id="@+id/tvDay"
             android:layout_width="72dp"
             android:layout_height="72dp"
+            android:gravity="center"
             android:text="12"
             android:textColor="@color/black"
-            android:textSize="50dp"
-            android:gravity="center"
+            android:textSize="32dp"
+            app:layout_constraintBottom_toBottomOf="@id/imageView"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="@id/imageView"
             tools:src="@drawable/baseline_menu_book_24" />
-
 
         <TextView
             android:id="@+id/tvSubject"
-            android:layout_width="180dp"
-            android:layout_height="16dp"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/purple_200"
             android:gravity="center_vertical"
+
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textStyle="normal"
+            android:textSize="16dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/tvDay"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="матан"/>
+            tools:text="информатика" />
 
         <TextView
             android:id="@+id/tvDayOfWeek"
             android:layout_width="180dp"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
             android:gravity="center_vertical"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintHorizontal_bias="0.22"
             app:layout_constraintStart_toEndOf="@+id/tvDay"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="понедельник" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSubject"
+            tools:text="пн" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

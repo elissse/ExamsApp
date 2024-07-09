@@ -11,6 +11,13 @@ object DayRepository {
     )
 
     var dayOfWeek: MutableList<String> = mutableListOf(
+        "пн",
+        "вт",
+        "ср",
+        "чт",
+        "пт",
+        "сб",
+        "вс",
         "понедельник",
         "вторник",
         "среда",
