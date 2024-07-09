@@ -24,7 +24,7 @@ class SubjectFragment : Fragment(R.layout.fragment_subject) {
 
 
         binding?.btnGoToBack?.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_subjectFragment_to_subjectsFragment)
         }
 
         binding?.materials?.setOnClickListener {

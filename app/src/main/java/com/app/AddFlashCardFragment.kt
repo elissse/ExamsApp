@@ -1,11 +1,18 @@
 package com.app
 
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
+import androidx.privacysandbox.tools.core.model.Types
 import com.app.databinding.FragmentAddFlashCardBinding
+import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.squareup.moshi.Moshi
+import java.lang.reflect.Type
 
 
 class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
@@ -18,21 +25,21 @@ class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
             tvTitle.setOnClickListener {
                 val question = questionEt.text.toString()
                 val answer = answerEt.text.toString()
-                var size = FlashCardRepository.flashCards.size
-
-                if (question.isNotEmpty()) {
-                    val subjectId = arguments?.getInt(ARG_ID) ?: -1
-                    FlashCardRepository.flashCards.add(
-                        FlashCard(
-                            id = ++size,
-                            subjectId = subjectId,
-                            question = question,
-                            answer = answer
-                        )
+                val subjectId = arguments?.getInt(ARG_ID) ?: -1
+                var size = FlashCardSharedPreferences.getSize(subjectId = subjectId)
+                if (question.isNotEmpty() && answer.isNotEmpty()) {
+                    val id = size
+                    val flashCard = FlashCard(
+                        id = id,
+                        subjectId = subjectId,
+                        question = question,
+                        answer = answer
                     )
+                    FlashCardSharedPreferences.updateListOfFlashCards("$subjectId:$id", flashCard)
+                    //"$subjectId:$id"
                     findNavController().navigate(
                         R.id.action_addFlashCardFragment_to_flashCardFragment,
-                        args = FlashCardsFragment.bundle(
+                        args = FlashCardFragment.bundle(
                             id = subjectId
                         )
                     )

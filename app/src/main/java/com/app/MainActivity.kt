@@ -10,10 +10,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.app.databinding.FragmentMainActivityBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-//fun main() {
-//    FlashCardRepository.flashCards.add(FlashCard(id = 5, subjectId = 1, question = "why5", answer="ansd5"
-//    ))
-//}
 class MainActivity : AppCompatActivity() {
 
     private var binding: FragmentMainActivityBinding? = null
@@ -25,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = FragmentMainActivityBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }
-
+        FlashCardSharedPreferences.init(this)
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment)
             .navController
 

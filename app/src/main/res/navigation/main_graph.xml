@@ -84,6 +84,9 @@
         <action
             android:id="@+id/action_subjectFragment_to_flashCardFragment"
             app:destination="@id/flashCardFragment" />
+        <action
+            android:id="@+id/action_subjectFragment_to_subjectsFragment"
+            app:destination="@id/subjectsFragment" />
     </fragment>
     <fragment
         android:id="@+id/subjectsFragment"
@@ -98,7 +101,11 @@
         android:id="@+id/textbookFragment"
         android:name="com.app.TextbookFragment"
         android:label="fragment_textbook"
-        tools:layout="@layout/fragment_textbook" />
+        tools:layout="@layout/fragment_textbook" >
+        <action
+            android:id="@+id/action_textbookFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.app.AboutFragment"

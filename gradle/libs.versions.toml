@@ -5,6 +5,7 @@ constraintlayoutCompose = "1.1.0-alpha13"
 easyflipview = "3.0.3"
 glide = "4.16.0"
 googleMaterial = "1.2.0"
+gson = "2.11.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -14,7 +15,9 @@ lifecycleRuntimeKtx = "2.8.2"
 activityCompose = "1.9.0"
 composeBom = "2024.04.01"
 material = "1.12.0"
+moshi = "1.15.1"
 navigationFragmentKtx = "2.7.7"
+toolsCore = "1.0.0-alpha09"
 
 [libraries]
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
@@ -24,6 +27,7 @@ androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fr
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 easyflipview = { module = "com.wajahatkarim:EasyFlipView", version.ref = "easyflipview" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -40,6 +44,8 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 material-v120 = { module = "com.google.android.material:material", version.ref = "googleMaterial"}
+androidx-tools-core = { group = "androidx.privacysandbox.tools", name = "tools-core", version.ref = "toolsCore" }
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

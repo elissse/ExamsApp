@@ -20,7 +20,7 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFlashCardsBinding.bind(view)
-         val subjectId = arguments?.getInt(ARG_ID) ?: -1
+        val subjectId = arguments?.getInt(ARG_ID) ?: -1
         initAdapter(subjectId)
     }
 
@@ -28,6 +28,7 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
         super.onDestroyView()
         binding = null
     }
+
     companion object {
         private const val ARG_ID = "ARG_ID"
         fun bundle(id: Int): Bundle = Bundle().apply {
@@ -43,7 +44,8 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
 //                Snackbar.LENGTH_SHORT
 //            ).show()
             adapter = FlashCardAdapter(
-                list = FlashCardRepository.flashCards.filter { it.subjectId == subjectId },
+                //list = FlashCardRepository.flashCards.filter { it.subjectId == subjectId },
+                list = FlashCardSharedPreferences.getListOfFlashCardsForSubject(subjectId),
                 glide = Glide.with(this@FlashCardsFragment),
                 onClick = {
                     Snackbar.make(root, it.answer, Snackbar.LENGTH_LONG).show()
@@ -54,9 +56,12 @@ class FlashCardsFragment : Fragment(R.layout.fragment_flash_cards) {
             // rvFlashCard.layoutManager = LinearLayoutManager(requireContext())
             rvFlashCard.layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            btnGoToBack.setOnClickListener{
+            btnGoToBack.setOnClickListener {
                 findNavController().navigate(
-                    R.id.action_flashCardsFragment_to_flashCardFragment
+                    R.id.action_flashCardsFragment_to_flashCardFragment,
+                    args = FlashCardFragment.bundle(
+                        id = subjectId
+                    )
                 )
             }
         }

@@ -47,7 +47,10 @@ class FlashCardFragment : Fragment(R.layout.fragment_flash_card) {
             }
             btnGoToBack.setOnClickListener{
                 findNavController().navigate(
-                    R.id.action_flashCardFragment_to_subjectFragment
+                    R.id.action_flashCardFragment_to_subjectFragment,
+                    args = AddFlashCardFragment.bundle(
+                        id = subjectId
+                    )
                 )
             }
         }
