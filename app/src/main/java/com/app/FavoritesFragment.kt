@@ -1,5 +1,6 @@
 package com.app
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -18,6 +19,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
         textbookRepository = TextbookRepository.getInstance(requireContext())
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(SUBJECT_ID)
+        TextbookRepository.getInstance(requireContext()).update()
         initAdapter()
     }
 
@@ -37,11 +39,10 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
     }
 
     private fun initAdapter() {
+        TextbookRepository.getInstance(requireContext()).update()
         binding?.run {
             adapter = LikeAdapter(
-                list = textbookRepository.textbooks.filter { textbook ->
-                    textbook.like
-                },
+                list = textbookRepository.like,
                 glide = Glide.with(this@FavoritesFragment),
             )
             binding?.rvTextbook?.adapter = adapter
@@ -49,5 +50,4 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
             rvTextbook.layoutManager = LinearLayoutManager(requireContext())
         }
     }
-
 }

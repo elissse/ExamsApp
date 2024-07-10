@@ -1,5 +1,7 @@
 package com.app
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -8,16 +10,20 @@ import com.app.databinding.FragmentTextbookBinding
 import com.bumptech.glide.Glide
 
 class TextbookFragment : Fragment(R.layout.fragment_textbook) {
+
     private lateinit var textbookRepository: TextbookRepository
     private var binding: FragmentTextbookBinding? = null
     private var subjectId: Int? = null
     private var adapter: TextbookAdapter? = null
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         textbookRepository = TextbookRepository.getInstance(requireContext())
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(ARG_ID)
+
+        sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)!!
         initAdapter()
     }
 
