@@ -1,5 +1,6 @@
 package com.app
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -18,6 +19,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
         textbookRepository = LikeRepository
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(SUBJECT_ID)
+        context?.let { LikeRepository.update(it) }
         initAdapter()
     }
 

@@ -33,8 +33,6 @@ class TextbookHolder(
                 btnLiked.visibility = View.INVISIBLE
             }
 
-            LikeRepository.update()
-
             btnLike.setOnClickListener(View.OnClickListener { view ->
                 btnLiked.visibility = View.VISIBLE
                 textbook.like = !(textbook.like)
@@ -44,8 +42,6 @@ class TextbookHolder(
                 btnLiked.visibility = View.INVISIBLE
                 textbook.like = !(textbook.like)
             })
-
-            LikeRepository.update()
 
             glide
                 .load(textbook.photoUrl)
