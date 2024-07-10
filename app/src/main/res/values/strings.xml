@@ -17,4 +17,5 @@
     <string name="add_new_flash_card">add a new flash card?</string>
     <string name="go_study">go study?</string>
     <string name="flash_cards">flash cards?</string>
+    <string name="go_to_backsubject">Перейти обратно к предмету</string>
 </resources>
