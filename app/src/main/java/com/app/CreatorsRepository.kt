@@ -4,26 +4,35 @@ object CreatorsRepository {
     val creators: List<Creator> = listOf(
         Creator(
             id = 0,
-            image = "",
+            image = "diana",
             name = "Ahmadullina Diana",
-            description = ""
+            description = "Student of 11-301 group\n" +
+                    "Pro Conan Gray listener\n" +
+                    "Novice android developer"
         ),
         Creator(
             id = 1,
-            image = "",
+            image = "ralina",
             name = "Garifullina Ralina",
-            description = ""
+            description = "Student of 11-301 group\n" +
+                    "Pro dancer despite being programmer\n" +
+                    "Novice android developer"
         ),
         Creator(
             id = 2,
             image = "elise",
             name = "Galeeva Elisa",
-            description = ""
+            description = "Student of 11-301 group\n" +
+                    "Pro gym attendee\n" +
+                    "Novice android developer"
         ),
         Creator(
             id = 3,
             image = "enya",
             name = "Kruglova Anna",
-            description = "")
+            description = "Student of 11-301 group\n" +
+                    "Pro sudoku solver\n" +
+                    "Novice android developer"
+        )
     )
 }
