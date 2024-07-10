@@ -1,11 +1,15 @@
 package com.app
 
+import android.content.Context
+import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.app.databinding.FragmentTextbookBinding
 import com.app.databinding.ItemTextbookBinding
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import java.security.AccessController.getContext
 
 
 class TextbookHolder(
@@ -25,22 +29,23 @@ class TextbookHolder(
 
             if (textbook.like) {
                 btnLiked.visibility = View.VISIBLE
-            }
-            else {
+            } else {
                 btnLiked.visibility = View.INVISIBLE
             }
 
-            btnLike.setOnClickListener(View.OnClickListener {view ->
+            LikeRepository.update()
+
+            btnLike.setOnClickListener(View.OnClickListener { view ->
                 btnLiked.visibility = View.VISIBLE
                 textbook.like = !(textbook.like)
             })
 
-            btnLiked.setOnClickListener(View.OnClickListener {view ->
+            btnLiked.setOnClickListener(View.OnClickListener { view ->
                 btnLiked.visibility = View.INVISIBLE
-                LikeRepository.textbooks.remove(textbook)
                 textbook.like = !(textbook.like)
             })
 
+            LikeRepository.update()
 
             glide
                 .load(textbook.photoUrl)

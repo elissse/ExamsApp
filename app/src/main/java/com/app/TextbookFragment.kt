@@ -1,5 +1,6 @@
 package com.app
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -8,14 +9,15 @@ import com.app.databinding.FragmentTextbookBinding
 import com.bumptech.glide.Glide
 
 class TextbookFragment : Fragment(R.layout.fragment_textbook) {
-    private lateinit var textbookRepository: TextbookRepository
+
+    private lateinit var textbookRepository: LikeRepository
     private var binding: FragmentTextbookBinding? = null
     private var subjectId: Int? = null
     private var adapter: TextbookAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textbookRepository = TextbookRepository.getInstance(requireContext())
+        textbookRepository = LikeRepository
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(ARG_ID)
         initAdapter()

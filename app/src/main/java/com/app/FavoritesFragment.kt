@@ -8,14 +8,14 @@ import com.app.databinding.FragmentTextbookBinding
 import com.bumptech.glide.Glide
 
 class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
-    private lateinit var textbookRepository: TextbookRepository
+    private lateinit var textbookRepository: LikeRepository
     private var binding: FragmentTextbookBinding? = null
     private var subjectId: Int? = null
     private var adapter: LikeAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textbookRepository = TextbookRepository.getInstance(requireContext())
+        textbookRepository = LikeRepository
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(SUBJECT_ID)
         initAdapter()
@@ -37,11 +37,10 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
     }
 
     private fun initAdapter() {
+        context?.let { LikeRepository.update(it) }
         binding?.run {
             adapter = LikeAdapter(
-                list = textbookRepository.textbooks.filter { textbook ->
-                    textbook.like
-                },
+                list = textbookRepository.like,
                 glide = Glide.with(this@FavoritesFragment),
             )
             binding?.rvTextbook?.adapter = adapter
@@ -49,5 +48,4 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
             rvTextbook.layoutManager = LinearLayoutManager(requireContext())
         }
     }
-
 }

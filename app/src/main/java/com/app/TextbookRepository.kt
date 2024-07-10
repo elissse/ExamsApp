@@ -1,6 +1,7 @@
 package com.app
 
 import android.content.Context
+import android.content.SharedPreferences
 
 //сделать поле liked boolean????
 //like=false - серое сердечко (invisible)
@@ -17,6 +18,7 @@ class TextbookRepository private constructor(context: Context) {
             return instance!!
         }
     }
+
 
     var textbooks: List<Textbook> = listOf(
         Textbook(
