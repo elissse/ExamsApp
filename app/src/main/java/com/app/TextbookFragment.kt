@@ -27,14 +27,14 @@ class TextbookFragment : Fragment(R.layout.fragment_textbook) {
         sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)!!
         initAdapter()
 
-        binding?.btnGoToBacksubject?.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_textbookFragment_to_subjectFragment,
-                args = SubjectFragment.bundle(
-                    id = subjectId!!
-                )
-            )
-        }
+//        binding?.btnGoToBacksubject?.setOnClickListener {
+//            findNavController().navigate(
+//                R.id.action_textbookFragment_to_subjectFragment,
+//                args = SubjectFragment.bundle(
+//                    id = subjectId!!
+//                )
+//            )
+//        }
     }
 
     override fun onDestroyView() {
