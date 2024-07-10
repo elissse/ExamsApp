@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="24sp"
-        android:text="Welcome to the ExamsApp Support Page!" />
+        android:text="@string/welcome" />
 
     <TextView
         android:id="@+id/tvIntro"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"
-        android:text="We are glad to see you here. Our goal is to ensure you have the best experience using our app. If you have any questions, issues, or suggestions, feel free to reach out to us." />
+        android:text="@string/intro" />
 
     <TextView
         android:id="@+id/tvContacts"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"
-        android:text="How to contact us: \n1. Email: Drop us a message at support@examsapp.com.\n2. Phone number: +7 (927) 444-82-82" />
+        android:text="@string/contacts" />
 
     <TextView
         android:id="@+id/tvHours"
@@ -79,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp"
-        android:text="Our working hours:\nMonday - Friday: 9:00 AM to 6:00 PM (local time)" />
+        android:text="@string/working_hours" />
 
     <TextView
         android:id="@+id/tvLogo"
@@ -92,6 +92,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="24sp"
-        android:text="ExamsApp ©" />
+        android:text="@string/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
