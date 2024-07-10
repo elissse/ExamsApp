@@ -19,7 +19,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
         textbookRepository = LikeRepository
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(SUBJECT_ID)
-        context?.let { LikeRepository.update(it) }
+        LikeRepository.update()
         initAdapter()
     }
 
@@ -39,7 +39,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
     }
 
     private fun initAdapter() {
-        context?.let { LikeRepository.update(it) }
+        LikeRepository.update()
         binding?.run {
             adapter = LikeAdapter(
                 list = textbookRepository.like,

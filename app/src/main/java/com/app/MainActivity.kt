@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             setContentView(it.root)
         }
 
+        LikeRepository.init(this)
+
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment)
             .navController
 

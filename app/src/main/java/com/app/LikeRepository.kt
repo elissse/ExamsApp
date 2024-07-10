@@ -4,10 +4,50 @@ import android.content.Context
 import android.content.SharedPreferences
 
 object LikeRepository {
-
-    // создать отдельный лист чисто с тру фолсами и основываться на нем?? Сохранять в шейрд только его??
-
     private var sharedPreferences: SharedPreferences? = null
+
+    var like: List<Textbook> = listOf()
+
+    fun update() {
+        val arr = getFrom()
+
+        textbooks.forEach {
+            it.like = false
+        }
+
+        arr.forEach{
+            textbooks[Integer.parseInt(it)-1].like = true
+        }
+
+        like = textbooks.filter {
+            (it.like)
+        }
+    }
+
+    fun init(context: Context) {
+        sharedPreferences =
+            context.getSharedPreferences("textbooksSharedPrefs", Context.MODE_PRIVATE)
+    }
+
+    fun add() {
+        val editor = sharedPreferences?.edit()
+        var sss = textbooks.filter {
+            (it.like)
+        } .map {
+            it.idTextbook.toString()
+        } .toSet()
+
+        editor?.putStringSet("set", sss)
+        editor?.apply()
+    }
+
+    fun getFrom(): ArrayList<String> {
+        val sss = sharedPreferences?.getStringSet("set", emptySet())?.toSet()
+        val myArrayList = arrayListOf<String>()
+        myArrayList.addAll(sss!!)
+        return myArrayList
+    }
+
 
     var textbooks: List<Textbook> = listOf(
         Textbook(
@@ -222,50 +262,4 @@ object LikeRepository {
             like = false
         )
     )
-
-    fun init(context: Context) {
-        sharedPreferences =
-            context.getSharedPreferences("textbooksSharedPrefs", Context.MODE_PRIVATE)
-    }
-
-    fun add() {
-        val editor = sharedPreferences?.edit()
-        //сохранить сет айдишников трушных???
-
-        var sss = textbooks.filter {
-            (it.like)
-        } .map {
-            it.idTextbook.toString()
-        } .toSet()
-
-        editor?.putStringSet("set", sss)
-        editor?.apply()
-    }
-
-    fun getFrom(): ArrayList<String> {
-        val sss = sharedPreferences?.getStringSet("set", emptySet())?.toSet()
-        val myArrayList = arrayListOf<String>()
-        myArrayList.addAll(sss!!)
-        return myArrayList
-    }
-
-    var like: List<Textbook> = listOf()
-
-    fun update(context: Context) {
-        init(context)
-        add()
-        val arr = getFrom()
-
-        textbooks.forEach {
-            it.like = false
-        }
-
-        arr.forEach{
-            textbooks[Integer.parseInt(it)-1].like = true
-        }
-
-        like = textbooks.filter {
-            (it.like)
-        }
-    }
 }

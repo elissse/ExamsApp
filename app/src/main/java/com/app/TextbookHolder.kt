@@ -36,11 +36,13 @@ class TextbookHolder(
             btnLike.setOnClickListener(View.OnClickListener { view ->
                 btnLiked.visibility = View.VISIBLE
                 textbook.like = !(textbook.like)
+                LikeRepository.add()
             })
 
             btnLiked.setOnClickListener(View.OnClickListener { view ->
                 btnLiked.visibility = View.INVISIBLE
                 textbook.like = !(textbook.like)
+                LikeRepository.add()
             })
 
             glide
