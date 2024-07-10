@@ -35,17 +35,7 @@
         android:id="@+id/flashCardFragment"
         android:name="com.app.FlashCardFragment"
         android:label="fragment_flash_card"
-        tools:layout="@layout/fragment_flash_card" >
-        <action
-            android:id="@+id/action_flashCardFragment_to_flashCardsFragment"
-            app:destination="@id/flashCardsFragment" />
-        <action
-            android:id="@+id/action_flashCardFragment_to_addFlashCardFragment"
-            app:destination="@id/addFlashCardFragment" />
-        <action
-            android:id="@+id/action_flashCardFragment_to_subjectFragment"
-            app:destination="@id/subjectFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_flash_card" />
     <fragment
         android:id="@+id/scheduleFragment"
         android:name="com.app.ScheduleFragment"
@@ -60,9 +50,6 @@
         android:name="com.app.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
-        <action
-            android:id="@+id/action_settingsFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
         <action
             android:id="@+id/action_settingsFragment_to_changeSettingsFragment"
             app:destination="@id/changeSettingsFragment" />
@@ -110,45 +97,15 @@
         android:id="@+id/aboutFragment"
         android:name="com.app.AboutFragment"
         android:label="fragment_about"
-        tools:layout="@layout/fragment_about" >
-        <action
-            android:id="@+id/action_aboutFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/changeSettingsFragment"
         android:name="com.app.ChangeSettingsFragment"
         android:label="fragment_change_settings"
-        tools:layout="@layout/fragment_change_settings" >
-        <action
-            android:id="@+id/action_changeSettingsFragment_to_settingsFragment2"
-            app:destination="@id/settingsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_change_settings" />
     <fragment
         android:id="@+id/supportFragment"
         android:name="com.app.SupportFragment"
         android:label="fragment_support"
-        tools:layout="@layout/fragment_support" >
-        <action
-            android:id="@+id/action_supportFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/flashCardsFragment"
-        android:name="com.app.FlashCardsFragment"
-        android:label="fragment_flash_cards"
-        tools:layout="@layout/fragment_flash_cards" >
-        <action
-            android:id="@+id/action_flashCardsFragment_to_flashCardFragment"
-            app:destination="@id/flashCardFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addFlashCardFragment"
-        android:name="com.app.AddFlashCardFragment"
-        android:label="fragment_add_flash_card"
-        tools:layout="@layout/fragment_add_flash_card" >
-        <action
-            android:id="@+id/action_addFlashCardFragment_to_flashCardFragment"
-            app:destination="@id/flashCardFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_support" />
 </navigation>
