@@ -28,7 +28,7 @@ class ChangeSettingsFragment: Fragment(R.layout.fragment_change_settings) {
     private fun init() {
         binding?.run {
             ibBack.setOnClickListener() {
-                findNavController().navigate(R.id.action_changeSettingsFragment_to_settingsFragment2)
+                findNavController().navigateUp()
             }
 
             val sharedPref = context?.getSharedPreferences(AuthorizationFragment.USER_INFO, Context.MODE_PRIVATE)

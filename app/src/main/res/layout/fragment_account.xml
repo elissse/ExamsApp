@@ -47,6 +47,7 @@
         android:src="@drawable/baseline_settings_24"
         android:backgroundTint="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTitle"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 

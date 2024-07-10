@@ -18,7 +18,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     private fun init() {
         binding?.run {
             ibBack.setOnClickListener() {
-                findNavController().navigate(R.id.action_settingsFragment_to_accountFragment)
+                findNavController().navigateUp()
             }
             mbChangeProfile.setOnClickListener() {
                 findNavController().navigate(R.id.action_settingsFragment_to_changeSettingsFragment)
