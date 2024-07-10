@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 
 class TextbookFragment : Fragment(R.layout.fragment_textbook) {
 
-    private lateinit var textbookRepository: LikeRepository
+    private lateinit var textbookRepository: TextbookRepository
     private var binding: FragmentTextbookBinding? = null
     private var subjectId: Int? = null
     private var adapter: TextbookAdapter? = null
@@ -19,7 +19,7 @@ class TextbookFragment : Fragment(R.layout.fragment_textbook) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        textbookRepository = LikeRepository
+        textbookRepository = TextbookRepository.getInstance(requireContext())
         binding = FragmentTextbookBinding.bind(view)
         subjectId = arguments?.getInt(ARG_ID)
 
