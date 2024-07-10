@@ -8,6 +8,7 @@ import android.text.util.Linkify
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.app.databinding.FragmentTextbookBinding
 import com.app.databinding.ItemTextbookBinding
@@ -28,6 +29,7 @@ class TextbookHolder(
         )
 
     fun onBind(textbook: Textbook) {
+
         binding.run {
             tvTitleAndAuthor.text = textbook.titleAndAuthor
             tvUrl.text = textbook.url
@@ -37,7 +39,6 @@ class TextbookHolder(
             Linkify.addLinks(spannableBuilder, Linkify.WEB_URLS)
             tvUrl.text = spannableBuilder
             tvUrl.movementMethod = LinkMovementMethod.getInstance()
-
 
             if (textbook.like) {
                 btnLiked.visibility = View.VISIBLE
@@ -49,6 +50,7 @@ class TextbookHolder(
                 btnLiked.visibility = View.VISIBLE
                 textbook.like = !(textbook.like)
                 TextbookRepository.getInstance(view.context).add()
+                TextbookRepository.getInstance(view.context).update()
             })
 
             btnLiked.setOnClickListener(View.OnClickListener { view ->
