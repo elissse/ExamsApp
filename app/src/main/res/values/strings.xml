@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">ExamsApp</string>
     <string name="sign_up">Sign up</string>
     <string name="name">Name</string>
@@ -16,9 +17,10 @@
     <string name="add_new_flash_card">add a new flash card?</string>
     <string name="go_study">go study?</string>
     <string name="flash_cards">flash cards?</string>
-    <string name="welcome">Welcome to the ExamsApp Support Page!</string>
-    <string name="intro">We are glad to see you here. Our goal is to ensure you have the best experience using our app. If you have any questions, issues, or suggestions, feel free to reach out to us.</string>
-    <string name="contacts">How to contact us: \n1. Email: Drop us a message at support@examsapp.com.\n2. Phone number: +7 (927) 444-82-82</string>
-    <string name="working_hours">Our working hours:\nMonday - Friday: 9:00 AM to 6:00 PM (local time)</string>
-    <string name="logo">ExamsApp ©</string>
+    <string name="welcome">Добро пожаловать на страницу поддержки ExamsApp!</string>
+    <string name="intro">Мы рады видеть Вас здесь. Наша цель состоит в том, чтобы обеспечить вам наилучшие впечатления от использования нашего приложения. Если у вас есть какие-либо вопросы, проблемы или предложения, не стесняйтесь обращаться к нам.</string>
+    <string name="contacts">Как с нами связаться: \n1. Электронная почта: Напишите нам по адресу support@examsapp.com.\n2. Телефон: +7 (927) 444-82-82</string>
+    <string name="working_hours">Наши часы работы:\nПонедельник - пятница: с 9:00 до 18:00 (по местному времени)</string>
+    <string name="logo">ExamsApp © </string>
+    <string name="go_to_backsubject">Перейти обратно к предмету</string>
 </resources>

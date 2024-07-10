@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.databinding.FragmentTextbookBinding
 import com.bumptech.glide.Glide
@@ -25,6 +26,15 @@ class TextbookFragment : Fragment(R.layout.fragment_textbook) {
 
         sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)!!
         initAdapter()
+
+        binding?.btnGoToBacksubject?.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_textbookFragment_to_subjectFragment,
+                args = SubjectFragment.bundle(
+                    id = subjectId!!
+                )
+            )
+        }
     }
 
     override fun onDestroyView() {
