@@ -40,7 +40,7 @@ class AddFlashCardFragment : Fragment(R.layout.fragment_add_flash_card) {
                 } else
                     Snackbar.make(
                         root,
-                        "all the fields need to be NOT empty",
+                        "все поля должны быть непустыми",
                         Snackbar.LENGTH_SHORT
                     ).show()
             }
