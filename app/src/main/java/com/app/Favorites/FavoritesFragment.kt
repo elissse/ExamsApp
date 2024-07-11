@@ -39,6 +39,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
         }
     }
 
+
     private fun initAdapter() {
         TextbookRepository.getInstance(requireContext()).update()
         binding?.run {
