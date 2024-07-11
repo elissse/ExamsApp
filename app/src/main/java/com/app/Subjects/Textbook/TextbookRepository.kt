@@ -53,7 +53,7 @@ class TextbookRepository private constructor(context: Context) {
         editor?.apply()
     }
 
-    fun getFrom(): ArrayList<String> {
+    private fun getFrom(): ArrayList<String> {
         val sss = sharedPreferences?.getStringSet("set", emptySet())?.toSet()
         val myArrayList = arrayListOf<String>()
         myArrayList.addAll(sss!!)
