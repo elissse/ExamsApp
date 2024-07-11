@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginVertical="64dp"
     android:layout_marginHorizontal="32dp"
-    tools:context=".AuthorizationFragment">
+    tools:context=".Account.Autorization.AuthorizationFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAvatar"

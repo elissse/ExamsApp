@@ -3,10 +3,11 @@ package com.app
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.animation.core.animateDpAsState
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.app.FlashCard.FlashCardSharedPreferences
+import com.app.Subjects.Textbook.TextbookRepository
 import com.app.databinding.FragmentMainActivityBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

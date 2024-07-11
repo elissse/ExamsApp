@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="32dp"
     android:layout_marginVertical="32dp"
-    tools:context=".AccountFragment">
+    tools:context=".Account.AccountFragment">
 
     <TextView
         android:id="@+id/tvTitle"

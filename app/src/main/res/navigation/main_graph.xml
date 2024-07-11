@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authorizationFragment"
-        android:name="com.app.AuthorizationFragment"
+        android:name="com.app.Account.Autorization.AuthorizationFragment"
         android:label="fragment_authorization"
         tools:layout="@layout/fragment_authorization" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.app.AccountFragment"
+        android:name="com.app.Account.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" >
         <action
@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.app.FavoritesFragment"
+        android:name="com.app.Favorites.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/flashCardFragment"
-        android:name="com.app.FlashCardFragment"
+        android:name="com.app.FlashCard.FlashCardFragment"
         android:label="fragment_flash_card"
         tools:layout="@layout/fragment_flash_card" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/scheduleFragment"
-        android:name="com.app.ScheduleFragment"
+        android:name="com.app.Schedule.ScheduleFragment"
         android:label="fragment_schedule"
         tools:layout="@layout/fragment_schedule" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.app.SettingsFragment"
+        android:name="com.app.Account.Settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/subjectFragment"
-        android:name="com.app.SubjectFragment"
+        android:name="com.app.Subjects.SubjectFragment"
         android:label="fragment_subject"
         tools:layout="@layout/fragment_subject" >
         <action
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/subjectsFragment"
-        android:name="com.app.SubjectsFragment"
+        android:name="com.app.Subjects.SubjectsFragment"
         android:label="fragment_subjects"
         tools:layout="@layout/fragment_subjects" >
         <action
@@ -96,7 +96,7 @@
     </fragment>
     <fragment
         android:id="@+id/textbookFragment"
-        android:name="com.app.TextbookFragment"
+        android:name="com.app.Subjects.Textbook.TextbookFragment"
         android:label="fragment_textbook"
         tools:layout="@layout/fragment_textbook" >
         <action
@@ -105,17 +105,17 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.app.AboutFragment"
+        android:name="com.app.Account.Settings.About.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/changeSettingsFragment"
-        android:name="com.app.ChangeSettingsFragment"
+        android:name="com.app.Account.Settings.ChangeSettingsFragment"
         android:label="fragment_change_settings"
         tools:layout="@layout/fragment_change_settings" />
     <fragment
         android:id="@+id/supportFragment"
-        android:name="com.app.SupportFragment"
+        android:name="com.app.Account.Settings.SupportFragment"
         android:label="fragment_support"
         tools:layout="@layout/fragment_support" >
         <action
@@ -124,7 +124,7 @@
     </fragment>
     <fragment
         android:id="@+id/flashCardsFragment"
-        android:name="com.app.FlashCardsFragment"
+        android:name="com.app.FlashCard.FlashCardsFragment"
         android:label="fragment_flash_cards"
         tools:layout="@layout/fragment_flash_cards" >
         <action
@@ -133,7 +133,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFlashCardFragment"
-        android:name="com.app.AddFlashCardFragment"
+        android:name="com.app.FlashCard.AddFlashCardFragment"
         android:label="fragment_add_flash_card"
         tools:layout="@layout/fragment_add_flash_card" >
         <action
