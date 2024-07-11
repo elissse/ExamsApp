@@ -65,9 +65,9 @@ class ChangeSettingsFragment: Fragment(R.layout.fragment_change_settings) {
                         editor?.putString(GROUP, if (group?.isEmpty() == true) tilGroup.hint.toString() else group)
                         editor?.apply()
                         GroupRepository.curGroup = GROUP
-                        Snackbar.make(root, "Your profile has been successfully changed", Snackbar.LENGTH_SHORT).show()
+                        Snackbar.make(root, "Ваш профиль был успешно изменен", Snackbar.LENGTH_SHORT).show()
                     }
-                    else ->  Snackbar.make(root, "Invalid info, please try again", Snackbar.LENGTH_SHORT).show()
+                    else ->  Snackbar.make(root, "Недопустимые данные, пожалуйста, попробуйте снова", Snackbar.LENGTH_SHORT).show()
                 }
             }
         }

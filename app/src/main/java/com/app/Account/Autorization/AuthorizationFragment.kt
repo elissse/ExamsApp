@@ -55,7 +55,7 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
                         GroupRepository.curGroup = GROUP
                         findNavController().navigate(R.id.action_authorizationFragment_to_scheduleFragment)
                     }
-                    else ->  Snackbar.make(root, "Invalid info, please try again", Snackbar.LENGTH_SHORT).show()
+                    else ->  Snackbar.make(root, "Недопустимые данные, пожалуйста, попробуйте снова", Snackbar.LENGTH_SHORT).show()
                 }
             }
         }
@@ -68,9 +68,9 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
             val title = string.lowercase()
             val message = when {
                 str.isEmpty() && string.equals(PATRONYMIC) -> null
-                str.isBlank() -> "Enter your $title"
-                str[0] != text.toString()[0].uppercaseChar() -> "${string[0]}${title.substring(1)} must start with a capital letter"
-                !regex.matches(str) -> "Make sure $title contains only letters and -"
+                str.isBlank() -> "Заполните поле $title"
+                str[0] != text.toString()[0].uppercaseChar() -> "${string[0]}${title.substring(1)} должно начинаться с заглавной буквы"
+                !regex.matches(str) -> "Убедитесь, что $title содержит только буквы буквы и -"
                 else -> null
             }
             til.error = message
@@ -80,7 +80,7 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
     private fun doOnTextChangedGroup(et: TextInputEditText, til: TextInputLayout) {
         et.doOnTextChanged() { text, _, _ , _  ->
             val message = when {
-                !GroupRepository.groups.contains(text.toString()) -> "Enter existing group"
+                !GroupRepository.groups.contains(text.toString()) -> "Введите существующую группу"
                 else -> null
             }
             til.error = message

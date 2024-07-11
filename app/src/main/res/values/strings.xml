@@ -1,22 +1,22 @@
 <resources>
 
     <string name="app_name">ExamsApp</string>
-    <string name="sign_up">Sign up</string>
-    <string name="name">Name</string>
-    <string name="surname">Surname</string>
-    <string name="patronymic">Patronymic</string>
-    <string name="group">Group</string>
-    <string name="send">Send</string>
-    <string name="account">Account</string>
-    <string name="change_profile">Change Profile</string>
-    <string name="support">Support</string>
-    <string name="settings">settings</string>
-    <string name="about_us">About us</string>
+    <string name="sign_up">Вход</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="patronymic">Отчество</string>
+    <string name="group">Группа</string>
+    <string name="send">Отправить</string>
+    <string name="account">Аккаунт</string>
+    <string name="change_profile">Изменить профиль</string>
+    <string name="support">Поддержка</string>
+    <string name="settings">Настройки</string>
+    <string name="about_us">О нас</string>
     <string name="go_to_back">Ко всем предметам</string>
-    <string name="go_back">go back?</string>
-    <string name="add_new_flash_card">add a new flash card?</string>
-    <string name="go_study">go study?</string>
-    <string name="flash_cards">flash cards?</string>
+    <string name="go_back">назад?</string>
+    <string name="add_new_flash_card">добавить новую флэшкарту?</string>
+    <string name="go_study">учиться?</string>
+    <string name="flash_cards">флэшкарты?</string>
     <string name="welcome">Добро пожаловать на страницу поддержки ExamsApp!</string>
     <string name="intro">Мы рады видеть Вас здесь. Наша цель состоит в том, чтобы обеспечить вам наилучшие впечатления от использования нашего приложения. Если у вас есть какие-либо вопросы, проблемы или предложения, не стесняйтесь обращаться к нам.</string>
     <string name="contacts">Как с нами связаться: \n1. Электронная почта: Напишите нам по адресу support@examsapp.com.\n2. Телефон: +7 (927) 444-82-82</string>

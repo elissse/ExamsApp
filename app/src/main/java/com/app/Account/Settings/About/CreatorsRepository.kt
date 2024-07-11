@@ -5,34 +5,34 @@ object CreatorsRepository {
         Creator(
             id = 0,
             image = "diana",
-            name = "Ahmadullina Diana",
-            description = "Student of 11-301 group\n" +
-                    "Pro Conan Gray listener\n" +
-                    "Novice android developer"
+            name = "Ахмадуллина Диана",
+            description = "Студентка группы 11-301\n" +
+                    "Про слушательница Конана Грея\n" +
+                    "Новичок андроид разработчик"
         ),
         Creator(
             id = 1,
             image = "ralina",
-            name = "Garifullina Ralina",
-            description = "Student of 11-301 group\n" +
-                    "Pro dancer despite being programmer\n" +
-                    "Novice android developer"
+            name = "Гарифуллина Ралина",
+            description = "Студентка группы 11-301\n" +
+                    "Про танцор, несмотря на то что является программисткой\n" +
+                    "Новичок андроид разработчик"
         ),
         Creator(
             id = 2,
             image = "elise",
-            name = "Galeeva Elisa",
-            description = "Student of 11-301 group\n" +
-                    "Pro gym attendee\n" +
-                    "Novice android developer"
+            name = "Галеева Элиза",
+            description = "Студентка группы 11-301\n" +
+                    "Про посетительница зала\n" +
+                    "Новичок андроид разработчик"
         ),
         Creator(
             id = 3,
             image = "enya",
             name = "Kruglova Anna",
-            description = "Student of 11-301 group\n" +
-                    "Pro sudoku solver\n" +
-                    "Novice android developer"
+            description = "Студентка группы 11-301\n" +
+                    "Про решательница судоку\n" +
+                    "Новичок андроид разработчик"
         )
     )
 }
