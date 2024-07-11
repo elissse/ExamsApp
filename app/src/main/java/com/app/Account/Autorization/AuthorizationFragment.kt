@@ -70,7 +70,7 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
                 str.isEmpty() && string.equals(PATRONYMIC) -> null
                 str.isBlank() -> "Заполните поле $title"
                 str[0] != text.toString()[0].uppercaseChar() -> "${string[0]}${title.substring(1)} должно начинаться с заглавной буквы"
-                !regex.matches(str) -> "Убедитесь, что $title содержит только буквы буквы и -"
+                !regex.matches(str) -> "Убедитесь, что $title содержит только буквы и -"
                 else -> null
             }
             til.error = message
@@ -89,10 +89,10 @@ class AuthorizationFragment : Fragment(R.layout.fragment_authorization) {
 
     companion object {
         const val USER_INFO = "USER_INFO"
-        const val NAME = "NAME"
-        const val SURNAME = "SURNAME"
-        const val PATRONYMIC = "PATRONYMIC"
-        const val GROUP = "GROUP"
+        const val NAME = "ИМЯ"
+        const val SURNAME = "ФАМИЛИЯ"
+        const val PATRONYMIC = "ОТЧЕСТВО"
+        const val GROUP = "ГРУППА"
         const val CHANGED = "CHANGED"
 
         fun isValidInfo(tilName: TextInputLayout,
