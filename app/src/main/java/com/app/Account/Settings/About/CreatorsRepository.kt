@@ -29,7 +29,7 @@ object CreatorsRepository {
         Creator(
             id = 3,
             image = "enya",
-            name = "Kruglova Anna",
+            name = "Круглова Анна",
             description = "Студентка группы 11-301\n" +
                     "Про решательница судоку\n" +
                     "Новичок андроид разработчик"
